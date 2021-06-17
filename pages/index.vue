@@ -377,7 +377,7 @@ export default {
             }
           }else if(symbol=='^'){
             if(this.result>0){
-              this.result = Mcath.pow(this.result,this.numbers[this.numbers.length-1])
+              this.result = Math.pow(this.result,this.numbers[this.numbers.length-1])
               this.lastnum = this.result
               this.display = this.result
             }else{
