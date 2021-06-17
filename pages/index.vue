@@ -9,9 +9,6 @@
           <v-btn @click="onfunc('^')">
             <input type="button" name="" value="^" class="global">
           </v-btn>
-          <v-btn @click="onfunc('%')">
-            <input type="button" name="" value="%" class="global">
-          </v-btn>
         </div>
         <div class="second-row">
           <v-btn @click="addnumber(7)">
@@ -321,57 +318,80 @@ export default {
     },
     clear(){
       this.display = "",
+      this.temp = "",
       this.numbers = []
+      this.symbols = []
+      this.result = 0
+      this.lastnum= 0
     },
     calculate(){
       this.numbers.push(parseFloat(this.temp))
+      console.log("first",this.numbers)
       this.numbers.forEach((value, index) => {
-        // console.log(this.numbers)
         if(this.lastnum>0){
-          let symbol = this.symbols.pop()
+          let symbol = this.symbols.shift()
+          console.log("second",this.numbers)
           if(symbol=='X'){
             if(this.result>0){
-              this.result = this.result*value
-              this.display = this.result.toFixed(2)
-            }else if(this.result<=0){
+              this.result = this.lastnum*this.numbers[this.numbers.length-1]
+              this.lastnum = this.result
+              this.display = this.result  
+            }else{
               this.result = this.lastnum*value
-              this.display = this.result.toFixed(2)
+              this.lastnum = this.result
+              this.display = this.result  
             }
+            // this.result = value*
+            // console.log(value)
+            // console.log("value:",this.numbers[index])
+            // console.log("value:",this.lastnum)
           }else if(symbol=='+'){
             if(this.result>0){
-              this.result = this.result+value
-              this.display = this.result.toFixed(2)
-            }else if(this.result<=0){
+              this.result = this.lastnum+this.numbers[this.numbers.length-1]
+              this.lastnum = this.result
+              this.display = this.result  
+            }else{
               this.result = this.lastnum+value
-              this.display = this.result.toFixed(2)
+              this.lastnum = this.result
+              this.display = this.result  
             }
           }else if(symbol=='-'){
             if(this.result>0){
-              this.result = this.result-value
-              this.display = this.result.toFixed(2)
-            }else if(this.result<=0){
+              this.result = this.lastnum-this.numbers[this.numbers.length-1]
+              this.lastnum = this.result
+              this.display = this.result  
+            }else{
               this.result = this.lastnum-value
-              this.display = this.result.toFixed(2)
+              this.lastnum = this.result
+              this.display = this.result  
             }
           }else if(symbol=='/'){
             if(this.result>0){
-              this.result = this.result/value
-              this.display = this.result.toFixed(2)
-            }else if(this.result<=0){
+              this.result = this.lastnum/this.numbers[this.numbers.length-1]
+              this.lastnum = this.result
+              this.display = this.result  
+            }else{
               this.result = this.lastnum/value
-              this.display = this.result.toFixed(2)
+              this.lastnum = this.result
+              this.display = this.result  
             }
           }else if(symbol=='^'){
             if(this.result>0){
-              this.result = Math.pow(this.result,value)
-              this.display = this.result.toFixed(2)
-            }else if(this.result<=0){
+              this.result = Mcath.pow(this.result,this.numbers[this.numbers.length-1])
+              this.lastnum = this.result
+              this.display = this.result
+            }else{
               this.result = Math.pow(this.lastnum,value)
-              this.display = this.result.toFixed(2)
+              this.lastnum = this.result
+              this.display = this.result
             }
           }
+          this.numbers.shift()
         }else{
+          this.numbers.shift()
           this.lastnum = value
+          this.result = value
+          this.calculate()
         }
       })
     },
