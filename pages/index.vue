@@ -147,6 +147,10 @@
             <input type="button" style="width:190px" name="" value="keliling Persegi panjang" class="global">
           </v-btn>
         </div>
+        <div style="display:flex;align-items:center;justify-content:center;">
+          &copy; Kelompok2|LutfiRahmanHartanto 
+        </div>
+
       </div>
     </div>
 </div>
