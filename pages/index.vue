@@ -172,7 +172,7 @@ h1{
   background-color: #F8F8F8;
 }
 .header{
-  background-color: #A95084;
+  background-color: #459c5f;
   padding: 10px;
   color: #fff;
   text-align: center;
@@ -245,7 +245,7 @@ h1{
   width: 100%;
 }
 .green{
-  background-color: #A95084 ;
+  background-color: #459c5f ;
 }
 .red{
   background-color: #F50258
