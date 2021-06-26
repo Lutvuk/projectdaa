@@ -112,7 +112,7 @@
           <input type="text" v-model="jari">
         </div>
         <br>
-        <div class="first-row" style="display:flex;align-items:center;justify-content:center;">
+        <div class="first-row" style="display:flex;align-items:center;justify-content:center">
           <v-btn @click="LuasBangun('persegi')">
             <input type="button" style="width:140px" name="" value="Luas Persegi" class="global">
           </v-btn>
@@ -120,7 +120,7 @@
             <input type="button" style="width:160px" name="" value="Keliling Persegi" class="global">
           </v-btn>
         </div>
-        <div class="first-row" style="display:flex;align-items:center;justify-content:center;">
+        <div class="first-row" style="display:flex;align-items:center;justify-content:center;padding:20px">
           <v-btn @click="LuasBangun('segitiga')">
             <input type="button" style="width:140px" name="" value="Luas Segi Tiga" class="global">
           </v-btn>
@@ -133,21 +133,17 @@
             <input type="button" style="width:160px" name="" value="Luas Lingkaran" class="global">
           </v-btn>
           <v-btn @click="KelilingBangun('lingkaran')">
-            <input type="button" style="width:160px" name="" value="keliling Lingkaran" class="global">
+            <input type="button" style="width:160px" name="" value="Keliling Lingkaran" class="global">
           </v-btn>
         </div>
         <div class="first-row" style="display:flex;align-items:center;justify-content:center;">
           <v-btn @click="LuasBangun('persegipanjang')">
-            <input type="button" style="width:190px" name="" value="Luas Persegi panjang" class="global">
+            <input type="button" style="width:160px" name="" value="Luas PP" class="global">
           </v-btn>
           <v-btn @click="KelilingBangun('persegipanjang')">
-            <input type="button" style="width:190px" name="" value="keliling Persegi panjang" class="global">
+            <input type="button" style="width:160px" name="" value="Keliling PP" class="global">
           </v-btn>
         </div>
-        <div style="display:flex;align-items:center;justify-content:center;">
-          &copy; Kelompok2|LutfiRahmanHartanto 
-        </div>
-
       </div>
     </div>
 </div>
@@ -163,6 +159,7 @@ h1{
   padding: 0;
 }
 .container{
+  border-radius:5px;
   margin: auto;
   width: 25%;
   padding: 10px;
@@ -171,7 +168,7 @@ h1{
      -moz-box-shadow: 1px 1px 4px 0px rgba(176,176,176,1);
           box-shadow: 1px 1px 4px 0px rgba(176,176,176,1);
   background-color: #fff;
-  height: 450px;
+  /* height: 450px; */
   background-color: #F8F8F8;
 }
 .header{
