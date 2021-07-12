@@ -161,7 +161,7 @@ h1{
 .container{
   border-radius:5px;
   margin: auto;
-  width: 25%;
+  width: 50%;
   padding: 10px;
   border: 1px solid #f2f2f2;
   -webkit-box-shadow: 1px 1px 4px 0px rgba(176,176,176,1);
@@ -258,6 +258,19 @@ h1{
 }
 .top-margin{
   margin-top: 4px;
+}
+
+/* Media Queries : Tablet Landscape */
+@media screen and (max-width:1060px) {
+  #primary {width: 67%;}
+  #secondary {width: 30%; margin-left: 3%;}
+}
+
+/* Media Queries: Tabled Portrait */
+@media screen and (max-width: 768px) {
+  #primary {width: 100%;}
+  #secondary {width: 100%; margin: 0; border: none;}
+  
 }
 
 </style>
