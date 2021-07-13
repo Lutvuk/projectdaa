@@ -161,7 +161,7 @@ h1{
 .container{
   border-radius:5px;
   margin: auto;
-  width: 50%;
+  width: 25%;
   padding: 10px;
   border: 1px solid #f2f2f2;
   -webkit-box-shadow: 1px 1px 4px 0px rgba(176,176,176,1);
