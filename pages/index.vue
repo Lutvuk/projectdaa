@@ -1,7 +1,7 @@
 <template>
 <div>
     <div>
-      <h1>Kalkulator|Kelompok 2</h1>
+      <h1>Calculator</h1>
       <div class="container">
         <div class="header">Calculator</div>
         <input type="text" class="result" disabled v-model="display"> 
