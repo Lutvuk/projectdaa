@@ -1,8 +1,9 @@
 <template>
 <div>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <div>
       <h1>Calculator</h1>
-      <div class="container">
+      <div class="container1">
         <div class="header">Calculator</div>
         <input type="text" class="result" disabled v-model="display"> 
         <div class="first-row">
@@ -59,12 +60,12 @@
             </v-btn>
           <v-btn @click="addnumber('.')">
             <input type="button" name="" value="." class=" small">
-            </v-btn>
+          </v-btn>
+          <v-btn @click="calculate()">
+            <input type="button" name="" value="=" class=" green white-text big top-margin">
+          </v-btn>
           <v-btn @click="clear()">
             <input type="button" name="" value="C" class=" red small white-text top-margin">
-          </v-btn>
-          <v-btn @click="calculate">
-            <input type="button" name="" value="=" class=" green white-text big top-margin">
           </v-btn>
           <!-- <v-btn @click="root">
             <input type="button" name="" value="root" class=" small">
@@ -81,69 +82,73 @@
     <div>
       <h1>Ruang Bangun</h1>
       <div class="container">
-        <div s class="first-row">
-          <label for="">Panjang</label>
-          <input type="text" v-model="panjang">
+        <div class="row">
+          <div class="col">
+            <div class="input-group mb-3">
+              <span class="input-group-text">Panjang</span>
+              <input type="text" class="form-control" v-model="panjang">
+            </div>
+          </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text">Lebar</span>
+              <input type="text" class="form-control" v-model="lebar">
+            </div>
+          </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text">Sisi A</span>
+              <input type="text" class="form-control" v-model="sisiA">
+              <span class="input-group-text">Sisi B</span>
+              <input type="text" class="form-control" v-model="sisiB">
+              <span class="input-group-text">Sisi C</span>
+              <input type="text" class="form-control" v-model="sisiC">
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text">Alas</span>
+              <input type="text" class="form-control" v-model="alas">
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text">Tinggi</span>
+              <input type="text" class="form-control" v-model="tinggi">
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text">Jari</span>
+              <input type="text" class="form-control" v-model="jari">
+            </div>
+        <div class="container">
+          <div class="row">
+            <v-btn @click="LuasBangun('persegi')" class="btn col-6 btn-outline-primary">
+              Luas Persegi
+            </v-btn>
+            <v-btn @click="KelilingBangun('persegi')" class="btn col-6 btn-outline-primary">
+              Keliling Persegi
+            </v-btn>
+          </div>
+          <div class="row" >
+            <v-btn @click="LuasBangun('segitiga')" class="btn col-6 btn-outline-primary">
+              Luas Segitiga
+            </v-btn>
+            <v-btn @click="KelilingBangun('segitiga')" class="btn col-6 btn-outline-primary">
+              Keliling Segitiga
+            </v-btn>
+          </div>
+          <div class="row">
+            <v-btn @click="LuasBangun('lingkaran')" class="btn col-6 btn-outline-primary">
+              Luas Lingkaran
+            </v-btn>
+            <v-btn @click="KelilingBangun('lingkaran')" class="btn col-6 btn-outline-primary">
+              Keliling Lingkaran
+            </v-btn>
+          </div>
+          <div class="row">
+            <v-btn @click="LuasBangun('persegipanjang')" class="btn col-6 btn-outline-primary">
+              Luas Persegi Panjang
+            </v-btn>
+            <v-btn @click="KelilingBangun('persegipanjang')" class="btn col-6 btn-outline-primary">
+              Keliling Persegi Panjang
+            </v-btn>
+          </div>
         </div>
-        <br>
-        <br>
-        <div>
-          <label for="">Lebar</label>
-          <input type="text" v-model="lebar">
-        </div>
-        <br>
-        <div>
-          <label for="">Sisi</label>
-          <input type="text" v-model="sisi">
-        </div>
-        <br>
-        <div>
-          <label for="">Alas</label>
-          <input type="text" v-model="alas">
-        </div>
-        <br>
-        <div>
-          <label for="">Tinggi</label>
-          <input type="text" v-model="tinggi">
-        </div>
-        <br>
-        <div>
-          <label for="">Jari Jari</label>
-          <input type="text" v-model="jari">
-        </div>
-        <br>
-        <div class="first-row" style="display:flex;align-items:center;justify-content:center">
-          <v-btn @click="LuasBangun('persegi')">
-            <input type="button" style="width:140px" name="" value="Luas Persegi" class="global">
-          </v-btn>
-          <v-btn @click="KelilingBangun('persegi')">
-            <input type="button" style="width:160px" name="" value="Keliling Persegi" class="global">
-          </v-btn>
-        </div>
-        <div class="first-row" style="display:flex;align-items:center;justify-content:center;padding:20px">
-          <v-btn @click="LuasBangun('segitiga')">
-            <input type="button" style="width:140px" name="" value="Luas Segi Tiga" class="global">
-          </v-btn>
-          <v-btn @click="KelilingBangun('segitiga')">
-            <input type="button" style="width:160px" name="" value="Keliling Segi Tiga" class="global">
-          </v-btn>
-        </div>
-        <div class="first-row" style="display:flex;align-items:center;justify-content:center;">
-          <v-btn @click="LuasBangun('lingkaran')">
-            <input type="button" style="width:160px" name="" value="Luas Lingkaran" class="global">
-          </v-btn>
-          <v-btn @click="KelilingBangun('lingkaran')">
-            <input type="button" style="width:160px" name="" value="Keliling Lingkaran" class="global">
-          </v-btn>
-        </div>
-        <div class="first-row" style="display:flex;align-items:center;justify-content:center;">
-          <v-btn @click="LuasBangun('persegipanjang')">
-            <input type="button" style="width:160px" name="" value="Luas PP" class="global">
-          </v-btn>
-          <v-btn @click="KelilingBangun('persegipanjang')">
-            <input type="button" style="width:160px" name="" value="Keliling PP" class="global">
-          </v-btn>
-        </div>
+        
       </div>
     </div>
 </div>
@@ -158,10 +163,10 @@ h1{
   margin: 0;
   padding: 0;
 }
-.container{
+.container1{
   border-radius:5px;
   margin: auto;
-  width: 25%;
+  width: 300px;
   padding: 10px;
   border: 1px solid #f2f2f2;
   -webkit-box-shadow: 1px 1px 4px 0px rgba(176,176,176,1);
@@ -290,7 +295,9 @@ export default {
     lastnum:0,
     result:0,
     hasil:0,
-    sisi:0,
+    sisiA:0,
+    sisiB:0,
+    sisiC:0,
     panjang:0,
     lebar:0,
     alas:0,
@@ -300,11 +307,11 @@ export default {
   ,methods: {
     LuasBangun(option){
       if(option=="persegi"){
-        this.hasil = Math.pow(parseFloat(this.sisi),2)
+        this.hasil = Math.pow(parseFloat(this.sisiA),2)
       }else if(option=="persegipanjang"){
-        this.hasil = this.panjang*this.lebar
+        this.hasil = Number(this.panjang)*Number(this.lebar)
       }else if(option=="segitiga"){
-        this.hasil = (this.alas/2) * this.tinggi
+        this.hasil = (this.alas/2) * Number(this.tinggi)
       }else if(option=="lingkaran"){
         this.hasil = Math.PI*Math.pow(this.jari,2)
       }
@@ -312,13 +319,13 @@ export default {
     },
     KelilingBangun(option){
       if(option=="persegi"){
-        this.hasil = 4*this.sisi
+        this.hasil = 4*this.sisiA
       }else if(option=="persegipanjang"){
-        this.hasil = 2*(this.panjang+this.lebar)
+        this.hasil = 2*(Number(this.panjang)+Number(this.lebar))
       }else if(option=="segitiga"){
-        this.hasil = this.sisi+this.sisi+this.sisi
+        this.hasil = Number(this.sisiA)+Number(this.sisiB)+Number(this.sisiC)
       }else if(option=="lingkaran"){
-        this.hasil = (2*Math.PI)*this.jari
+        this.hasil = (2*Math.PI)*Number(this.jari)
       }
       alert(this.hasil)
     },
@@ -335,6 +342,9 @@ export default {
       this.lastnum= 0
     },
     calculate(){
+      if(this.numbers.length<1 ){
+        return
+      }
       this.numbers.push(parseFloat(this.temp))
       console.log("first",this.numbers)
       this.numbers.forEach((value, index) => {
@@ -351,10 +361,6 @@ export default {
               this.lastnum = this.result
               this.display = this.result  
             }
-            // this.result = value*
-            // console.log(value)
-            // console.log("value:",this.numbers[index])
-            // console.log("value:",this.lastnum)
           }else if(symbol=='+'){
             if(this.result>0){
               this.result = this.lastnum+this.numbers[this.numbers.length-1]
