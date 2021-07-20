@@ -1,35 +1,13 @@
 <template>
   <div>
     <Nuxt />
-    <div style="display:flex;align-items:center;justify-content:center;margin:20px">
+    <div style="display:flex; align-items:center; justify-content:center; margin:10px 0px 0px 0px">
         &copy; Kelompok2 
     </div>
   </div>
 </template>
 
 <style>
-html {
-  background-image: url("assets/tolol.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  font-family:
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
 
 *,
 *::before,

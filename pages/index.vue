@@ -116,34 +116,34 @@
             </div>
         <div class="container">
           <div class="row">
-            <v-btn @click="LuasBangun('persegi')" class="btn col-6 btn-outline-primary">
+            <v-btn @click="LuasBangun('persegi')" class="btn col-6 btn btn-outline-light" style="margin: 5px 0px 0px 0px;">
               Luas Persegi
             </v-btn>
-            <v-btn @click="KelilingBangun('persegi')" class="btn col-6 btn-outline-primary">
+            <v-btn @click="KelilingBangun('persegi')" class="btn col-6 btn btn-outline-light" style="margin: 5px 0px 0px 0px;">
               Keliling Persegi
             </v-btn>
           </div>
           <div class="row" >
-            <v-btn @click="LuasBangun('segitiga')" class="btn col-6 btn-outline-primary">
+            <v-btn @click="LuasBangun('segitiga')" class="btn col-6 btn btn-outline-light" style="margin: 5px 0px 0px 0px;">
               Luas Segitiga
             </v-btn>
-            <v-btn @click="KelilingBangun('segitiga')" class="btn col-6 btn-outline-primary">
+            <v-btn @click="KelilingBangun('segitiga')" class="btn col-6 btn btn-outline-light" style="margin: 5px 0px 0px 0px;">
               Keliling Segitiga
             </v-btn>
           </div>
           <div class="row">
-            <v-btn @click="LuasBangun('lingkaran')" class="btn col-6 btn-outline-primary">
+            <v-btn @click="LuasBangun('lingkaran')" class="btn col-6 btn btn-outline-light" style="margin: 5px 0px 0px 0px;">
               Luas Lingkaran
             </v-btn>
-            <v-btn @click="KelilingBangun('lingkaran')" class="btn col-6 btn-outline-primary">
+            <v-btn @click="KelilingBangun('lingkaran')" class="btn col-6 btn btn-outline-light" style="margin: 5px 0px 0px 0px;">
               Keliling Lingkaran
             </v-btn>
           </div>
           <div class="row">
-            <v-btn @click="LuasBangun('persegipanjang')" class="btn col-6 btn-outline-primary">
+            <v-btn @click="LuasBangun('persegipanjang')" class="btn col-6 btn btn-outline-light" style="margin: 5px 0px 0px 0px;">
               Luas Persegi Panjang
             </v-btn>
-            <v-btn @click="KelilingBangun('persegipanjang')" class="btn col-6 btn-outline-primary">
+            <v-btn @click="KelilingBangun('persegipanjang')" class="btn col-6 btn btn-outline-light" style="margin: 5px 0px 0px 0px;"> 
               Keliling Persegi Panjang
             </v-btn>
           </div>
@@ -154,6 +154,11 @@
 </div>
 </template>
 <style>
+body {
+  background-image: url("assets/tolol.jpg");
+  background-repeat: no-repeat;
+   background-size: cover;
+}
 h1{
   text-align: center;
   margin-top: 0.67em;
@@ -172,7 +177,7 @@ h1{
   -webkit-box-shadow: 1px 1px 4px 0px rgba(176,176,176,1);
      -moz-box-shadow: 1px 1px 4px 0px rgba(176,176,176,1);
           box-shadow: 1px 1px 4px 0px rgba(176,176,176,1);
-  background-color: #fff;
+  background-color: s#fff;
   /* height: 450px; */
   background-color: #F8F8F8;
 }
