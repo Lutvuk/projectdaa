@@ -155,7 +155,7 @@
 </template>
 <style>
 body {
-  background-image: url("assets/tolol.jpg");
+  background-image: url("assets/tolol.png");
   background-repeat: no-repeat;
    background-size: cover;
 }
